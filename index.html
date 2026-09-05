@@ -958,281 +958,304 @@
     </div>
 
     <script>
-        function parseMarkdown(text) {
-            if (!text) return '';
-            let html = text
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;');
+    function parseMarkdown(text) {
+        if (!text) return '';
+        let html = text
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
 
-            html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
-            html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
-            html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
-            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-            html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-            html = html.replace(/`(.*?)`/g, '<code>$1</code>');
-            html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+        html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+        html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+        html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+        html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+        html = html.replace(/`(.*?)`/g, '<code>$1</code>');
+        html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
 
-            const lines = html.split('\n\n');
-            return lines.map(line => {
-                if (line.trim().startsWith('<h')) return line;
-                return `<p>${line.replace(/\n/g, '<br>')}</p>`;
-            }).join('');
+        const lines = html.split('\n\n');
+        return lines.map(line => {
+            if (line.trim().startsWith('<h')) return line;
+            return `<p>${line.replace(/\n/g, '<br>')}</p>`;
+        }).join('');
+    }
+
+    const fallbackPodcastsData = [
+        {
+            "id": "1",
+            "title": "Introduction to Quantum Computing",
+            "category": "physics",
+            "date": "2026-08-10",
+            "duration": "05:30",
+            "author": "Prof. Richard Feynman",
+            "file": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+            "type": "audio",
+            "description": "# Quantum Physics Overview\n\nIn this lecture, we discuss **superposition** and **entanglement**.",
+            "transcript": "[00:00] Welcome to Introduction to Quantum Computing."
+        }
+    ];
+
+    let podcastsList = [];
+    let currentTrack = null;
+    let isPlaying = false;
+    let activeMediaElement = document.getElementById('globalAudioPlayer');
+
+    async function initPodcastsHub() {
+        try {
+            const response = await fetch('podcasts.json');
+            if (!response.ok) throw new Error('Podcasts JSON fetch failed');
+            const rawData = await response.json();
+
+            podcastsList = rawData.map((item, index) => ({
+                id: String(item.id || index + 1),
+                title: item.title || 'Untitled Item',
+                category: item.category || 'general',
+                date: item.date || new Date().toISOString().split('T')[0],
+                duration: item.duration || '--:--',
+                author: item.author || 'Lecturer',
+                file: item.file || item.url || '',
+                type: item.type || 'audio', // Dynamically loads media type
+                description: item.description || 'No description provided.',
+                transcript: item.transcript || 'No transcript available.'
+            }));
+        } catch (error) {
+            console.warn('Using fallback lecture data:', error);
+            podcastsList = fallbackPodcastsData;
         }
 
-        const fallbackPodcastsData = [
-            {
-                "id": "1",
-                "title": "Introduction to Quantum Computing",
-                "category": "physics",
-                "date": "2026-08-10",
-                "duration": "05:30",
-                "author": "Prof. Richard Feynman",
-                "file": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-                "description": "# Quantum Physics Overview\n\nIn this lecture, we discuss **superposition** and **entanglement**.",
-                "transcript": "[00:00] Welcome to Introduction to Quantum Computing.\n[00:15] Today we will explore quantum state superposition and how Qubits process information exponentially faster than classical bits."
-            }
-        ];
+        renderPodcastsFeed();
+        setupMediaEventListeners();
+    }
 
-        let podcastsList = [];
-        let currentTrack = null;
-        let isPlaying = false;
-        let activeMediaElement = document.getElementById('globalAudioPlayer');
+    function renderPodcastsFeed() {
+        const grid = document.getElementById('podcastGrid');
+        const searchVal = document.getElementById('searchInput').value.toLowerCase();
+        const catVal = document.getElementById('categoryFilter').value;
+        const sortVal = document.getElementById('sortOrder').value;
 
-        async function initPodcastsHub() {
-            try {
-                const response = await fetch('podcasts.json');
-                if (!response.ok) throw new Error('Podcasts JSON fetch failed');
-                const rawData = await response.json();
-                
-                podcastsList = rawData.map((item, index) => ({
-                    id: String(item.id || index + 1),
-                    title: item.title || 'Untitled Lecture',
-                    category: item.category || 'computer science',
-                    date: item.date || new Date().toISOString().split('T')[0],
-                    duration: item.duration || '--:--',
-                    author: item.author || 'Lecturer',
-                    file: item.file || item.url || '',
-                    type: 'audio',
-                    description: item.description || 'No description provided.',
-                    transcript: item.transcript || 'No transcript available for this lecture.'
-                }));
-            } catch (error) {
-                console.warn('Using fallback lecture data:', error);
-                podcastsList = fallbackPodcastsData;
-            }
+        let filtered = podcastsList.filter(item => {
+            const matchesSearch = item.title.toLowerCase().includes(searchVal) ||
+                                  item.description.toLowerCase().includes(searchVal) ||
+                                  item.author.toLowerCase().includes(searchVal);
+            const matchesCategory = (catVal === 'all' || item.category.toLowerCase() === catVal);
+            return matchesSearch && matchesCategory;
+        });
 
-            renderPodcastsFeed();
-            setupMediaEventListeners();
+        filtered.sort((a, b) => {
+            const dateA = new Date(a.date);
+            const dateB = new Date(b.date);
+            return sortVal === 'newest' ? dateB - dateA : dateA - dateB;
+        });
+
+        document.getElementById('resultsStats').innerText = `Showing ${filtered.length} available item(s)`;
+        grid.innerHTML = '';
+
+        if (filtered.length === 0) {
+            grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: var(--text-muted);">No media found matching your criteria.</div>`;
+            return;
         }
 
-        function renderPodcastsFeed() {
-            const grid = document.getElementById('podcastGrid');
-            const searchVal = document.getElementById('searchInput').value.toLowerCase();
-            const catVal = document.getElementById('categoryFilter').value;
-            const sortVal = document.getElementById('sortOrder').value;
+        filtered.forEach(podcast => {
+            const isCurrentPlaying = currentTrack && currentTrack.id === podcast.id && isPlaying;
+            const card = document.createElement('div');
+            card.className = `podcast-card glass-panel ${isCurrentPlaying ? 'is-playing' : ''}`;
 
-            let filtered = podcastsList.filter(item => {
-                const matchesSearch = item.title.toLowerCase().includes(searchVal) ||
-                                      item.description.toLowerCase().includes(searchVal) ||
-                                      item.author.toLowerCase().includes(searchVal);
-                const matchesCategory = (catVal === 'all' || item.category.toLowerCase() === catVal);
-                return matchesSearch && matchesCategory;
-            });
-
-            filtered.sort((a, b) => {
-                const dateA = new Date(a.date);
-                const dateB = new Date(b.date);
-                return sortVal === 'newest' ? dateB - dateA : dateA - dateB;
-            });
-
-            document.getElementById('resultsStats').innerText = `Showing ${filtered.length} available lectures`;
-            grid.innerHTML = '';
-
-            if (filtered.length === 0) {
-                grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: var(--text-muted);">No lectures found matching your criteria.</div>`;
-                return;
-            }
-
-            filtered.forEach(podcast => {
-                const isCurrentPlaying = currentTrack && currentTrack.id === podcast.id && isPlaying;
-                const card = document.createElement('div');
-                card.className = `podcast-card glass-panel ${isCurrentPlaying ? 'is-playing' : ''}`;
-
-                card.innerHTML = `
-                    <div class="podcast-meta">
-                        <span class="media-type-badge badge-audio">Audio</span>
-                        <span>${podcast.date}</span>
-                    </div>
-                    <h3 class="podcast-title">${podcast.title}</h3>
-                    <div class="markdown-desc markdown-content">
-                        ${parseMarkdown(podcast.description)}
-                    </div>
-                    <div class="card-footer">
-                        <span class="duration">${podcast.duration}</span>
-                        <div class="card-actions">
-                            <button class="fullscreen-btn" title="Fullscreen / Transcript View" onclick="openFullscreenModal('${podcast.id}')">
-                                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
-                            </button>
+            card.innerHTML = `
+                <div class="podcast-meta">
+                    <span class="media-type-badge badge-${podcast.type}">${podcast.type.toUpperCase()}</span>
+                    <span>${podcast.date}</span>
+                </div>
+                <h3 class="podcast-title">${podcast.title}</h3>
+                <div class="markdown-desc markdown-content">
+                    ${parseMarkdown(podcast.description)}
+                </div>
+                <div class="card-footer">
+                    <span class="duration">${podcast.duration}</span>
+                    <div class="card-actions">
+                        <button class="fullscreen-btn" title="View Details" onclick="openFullscreenModal('${podcast.id}')">
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                        </button>
+                        ${podcast.type !== 'image' ? `
                             <button class="play-btn ${isCurrentPlaying ? 'playing' : ''}" onclick="togglePlayTrack('${podcast.id}')">
                                 <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="${isCurrentPlaying ? 'M6 19h4V5H6v14zm8-14v14h4V5h-4z' : 'M8 5v14l11-7z'}"/>
                                 </svg>
                                 <span>${isCurrentPlaying ? 'Pause' : 'Play'}</span>
                             </button>
-                        </div>
+                        ` : ''}
                     </div>
-                `;
-                grid.appendChild(card);
-            });
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    function togglePlayTrack(id) {
+        const podcast = podcastsList.find(p => p.id === id);
+        if (!podcast || podcast.type === 'image') return;
+
+        if (currentTrack && currentTrack.id === id) {
+            isPlaying ? pauseMedia() : playMedia();
+        } else {
+            loadAndPlayTrack(podcast);
         }
+    }
 
-        function togglePlayTrack(id) {
-            const podcast = podcastsList.find(p => p.id === id);
-            if (!podcast) return;
+    function loadAndPlayTrack(podcast) {
+        currentTrack = podcast;
+        document.getElementById('playerBar').classList.add('active');
+        document.getElementById('trackTitle').innerText = podcast.title;
+        document.getElementById('trackMeta').innerText = `${podcast.author} • ${podcast.category.toUpperCase()}`;
 
-            if (currentTrack && currentTrack.id === id) {
-                isPlaying ? pauseMedia() : playMedia();
-            } else {
-                loadAndPlayTrack(podcast);
-            }
-        }
-
-        function loadAndPlayTrack(podcast) {
-            currentTrack = podcast;
-            document.getElementById('playerBar').classList.add('active');
-            document.getElementById('trackTitle').innerText = podcast.title;
-            document.getElementById('trackMeta').innerText = `${podcast.author} • ${podcast.category.toUpperCase()}`;
-
+        if (podcast.type === 'audio' || podcast.type === 'video') {
             activeMediaElement.src = podcast.file;
             activeMediaElement.load();
-
             playMedia();
-            renderPodcastsFeed();
         }
+        renderPodcastsFeed();
+    }
 
-        function playMedia() {
-            if (!activeMediaElement || !activeMediaElement.src) return;
-            activeMediaElement.play()
-                .then(() => { isPlaying = true; updatePlaybackUI(); })
-                .catch(() => { isPlaying = false; updatePlaybackUI(); });
-        }
+    function playMedia() {
+        if (!activeMediaElement || !activeMediaElement.src) return;
+        activeMediaElement.play()
+            .then(() => { isPlaying = true; updatePlaybackUI(); })
+            .catch(() => { isPlaying = false; updatePlaybackUI(); });
+    }
 
-        function pauseMedia() {
-            if (activeMediaElement) activeMediaElement.pause();
-            isPlaying = false;
-            updatePlaybackUI();
-        }
+    function pauseMedia() {
+        if (activeMediaElement) activeMediaElement.pause();
+        isPlaying = false;
+        updatePlaybackUI();
+    }
 
-        function updatePlaybackUI() {
-            const playIcon = document.getElementById('globalPlayIcon');
-            playIcon.innerHTML = isPlaying 
+    function updatePlaybackUI() {
+        const playIcon = document.getElementById('globalPlayIcon');
+        if (playIcon) {
+            playIcon.innerHTML = isPlaying
                 ? `<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>`
                 : `<path d="M8 5v14l11-7z"/>`;
-            renderPodcastsFeed();
+        }
+        renderPodcastsFeed();
+    }
+
+    function setupMediaEventListeners() {
+        if (!activeMediaElement) return;
+        activeMediaElement.ontimeupdate = handleTimeUpdate;
+        activeMediaElement.onended = () => { isPlaying = false; updatePlaybackUI(); };
+    }
+
+    function handleTimeUpdate() {
+        const cur = activeMediaElement.currentTime || 0;
+        const dur = activeMediaElement.duration || 0;
+
+        document.getElementById('currentTimeStr').innerText = formatTime(cur);
+        document.getElementById('totalDurationStr').innerText = dur ? formatTime(dur) : (currentTrack ? currentTrack.duration : '0:00');
+
+        const pct = dur > 0 ? (cur / dur) * 100 : 0;
+        document.getElementById('progressBarFill').style.width = `${pct}%`;
+    }
+
+    function handleSeekClick(e) {
+        if (!activeMediaElement || !activeMediaElement.duration) return;
+        const bar = document.getElementById('progressBarBg');
+        const rect = bar.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        activeMediaElement.currentTime = (clickX / rect.width) * activeMediaElement.duration;
+    }
+
+    function seekRelative(seconds) {
+        if (!activeMediaElement) return;
+        activeMediaElement.currentTime = Math.max(0, (activeMediaElement.currentTime || 0) + seconds);
+    }
+
+    function handleVolumeChange(val) {
+        if (activeMediaElement) activeMediaElement.volume = parseFloat(val);
+    }
+
+    function setPlaybackSpeed(speed, btnEl) {
+        if (activeMediaElement) activeMediaElement.playbackRate = speed;
+        document.querySelectorAll('.speed-btn').forEach(b => b.classList.remove('active'));
+        if (btnEl) btnEl.classList.add('active');
+    }
+
+    function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+
+    function openFullscreenModal(id) {
+        const podcast = podcastsList.find(p => p.id === id);
+        if (!podcast) return;
+
+        if (podcast.type !== 'image' && (!currentTrack || currentTrack.id !== id)) {
+            loadAndPlayTrack(podcast);
         }
 
-        function setupMediaEventListeners() {
-            activeMediaElement.ontimeupdate = handleTimeUpdate;
-            activeMediaElement.onended = () => { isPlaying = false; updatePlaybackUI(); };
+        setupModalContent(podcast);
+        document.getElementById('fullscreenModal').classList.add('active');
+    }
+
+    function setupModalContent(podcast) {
+        document.getElementById('modalTitle').innerText = podcast.title;
+        document.getElementById('modalCategory').innerText = podcast.category.toUpperCase();
+        document.getElementById('modalAuthor').innerText = podcast.author;
+        document.getElementById('modalDate').innerText = podcast.date;
+
+        let mediaDisplay = parseMarkdown(podcast.description);
+
+        // Render dynamic viewer inside modal depending on item type
+        if (podcast.type === 'video') {
+            mediaDisplay = `
+                <div style="margin-bottom: 1.5rem;">
+                    <video controls autoplay style="width: 100%; max-height: 400px; border-radius: 8px;">
+                        <source src="${podcast.file}">
+                    </video>
+                </div>
+            ` + mediaDisplay;
+        } else if (podcast.type === 'image') {
+            mediaDisplay = `
+                <div style="margin-bottom: 1.5rem; text-align: center;">
+                    <img src="${podcast.file}" alt="${podcast.title}" style="max-width: 100%; max-height: 500px; border-radius: 8px;" />
+                </div>
+            ` + mediaDisplay;
         }
 
-        function handleTimeUpdate() {
-            const cur = activeMediaElement.currentTime || 0;
-            const dur = activeMediaElement.duration || 0;
+        document.getElementById('modalDescription').innerHTML = mediaDisplay;
+        document.getElementById('modalTranscript').innerText = podcast.transcript;
 
-            document.getElementById('currentTimeStr').innerText = formatTime(cur);
-            document.getElementById('totalDurationStr').innerText = dur ? formatTime(dur) : (currentTrack ? currentTrack.duration : '0:00');
+        switchModalTab('notes');
+    }
 
-            const pct = dur > 0 ? (cur / dur) * 100 : 0;
-            document.getElementById('progressBarFill').style.width = `${pct}%`;
+    function switchModalTab(tabName) {
+        const notesEl = document.getElementById('modalDescription');
+        const transcriptEl = document.getElementById('modalTranscript');
+        const tabNotesBtn = document.getElementById('tabNotesBtn');
+        const tabTranscriptBtn = document.getElementById('tabTranscriptBtn');
+
+        if (tabName === 'transcript') {
+            notesEl.style.display = 'none';
+            transcriptEl.style.display = 'block';
+            tabNotesBtn.classList.remove('active');
+            tabTranscriptBtn.classList.add('active');
+        } else {
+            notesEl.style.display = 'block';
+            transcriptEl.style.display = 'none';
+            tabNotesBtn.classList.add('active');
+            tabTranscriptBtn.classList.remove('active');
         }
+    }
 
-        function handleSeekClick(e) {
-            if (!activeMediaElement || !activeMediaElement.duration) return;
-            const bar = document.getElementById('progressBarBg');
-            const rect = bar.getBoundingClientRect();
-            const clickX = e.clientX - rect.left;
-            activeMediaElement.currentTime = (clickX / rect.width) * activeMediaElement.duration;
-        }
+    function closeFullscreenModal() {
+        document.getElementById('fullscreenModal').classList.remove('active');
+    }
 
-        function seekRelative(seconds) {
-            if (!activeMediaElement) return;
-            activeMediaElement.currentTime = Math.max(0, (activeMediaElement.currentTime || 0) + seconds);
-        }
+    document.getElementById('globalPlayBtn').onclick = () => isPlaying ? pauseMedia() : playMedia();
+    document.getElementById('searchInput').oninput = renderPodcastsFeed;
+    document.getElementById('categoryFilter').onchange = renderPodcastsFeed;
+    document.getElementById('sortOrder').onchange = renderPodcastsFeed;
 
-        function handleVolumeChange(val) {
-            if (activeMediaElement) activeMediaElement.volume = parseFloat(val);
-        }
-
-        function setPlaybackSpeed(speed, btnEl) {
-            if (activeMediaElement) activeMediaElement.playbackRate = speed;
-            document.querySelectorAll('.speed-btn').forEach(b => b.classList.remove('active'));
-            if (btnEl) btnEl.classList.add('active');
-        }
-
-        function formatTime(seconds) {
-            const mins = Math.floor(seconds / 60);
-            const secs = Math.floor(seconds % 60);
-            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
-        }
-
-        function openFullscreenModal(id) {
-            const podcast = podcastsList.find(p => p.id === id);
-            if (!podcast) return;
-
-            if (!currentTrack || currentTrack.id !== id) {
-                loadAndPlayTrack(podcast);
-            }
-
-            setupModalContent(podcast);
-            document.getElementById('fullscreenModal').classList.add('active');
-        }
-
-        function openFullscreenModalCurrent() {
-            if (currentTrack) openFullscreenModal(currentTrack.id);
-        }
-
-        function setupModalContent(podcast) {
-            document.getElementById('modalTitle').innerText = podcast.title;
-            document.getElementById('modalCategory').innerText = podcast.category.toUpperCase();
-            document.getElementById('modalAuthor').innerText = podcast.author;
-            document.getElementById('modalDate').innerText = podcast.date;
-            document.getElementById('modalDescription').innerHTML = parseMarkdown(podcast.description);
-            document.getElementById('modalTranscript').innerText = podcast.transcript;
-
-            switchModalTab('notes');
-        }
-
-        function switchModalTab(tabName) {
-            const notesEl = document.getElementById('modalDescription');
-            const transcriptEl = document.getElementById('modalTranscript');
-            const tabNotesBtn = document.getElementById('tabNotesBtn');
-            const tabTranscriptBtn = document.getElementById('tabTranscriptBtn');
-
-            if (tabName === 'transcript') {
-                notesEl.style.display = 'none';
-                transcriptEl.style.display = 'block';
-                tabNotesBtn.classList.remove('active');
-                tabTranscriptBtn.classList.add('active');
-            } else {
-                notesEl.style.display = 'block';
-                transcriptEl.style.display = 'none';
-                tabNotesBtn.classList.add('active');
-                tabTranscriptBtn.classList.remove('active');
-            }
-        }
-
-        function closeFullscreenModal() {
-            document.getElementById('fullscreenModal').classList.remove('active');
-        }
-
-        document.getElementById('globalPlayBtn').onclick = () => isPlaying ? pauseMedia() : playMedia();
-        document.getElementById('searchInput').oninput = renderPodcastsFeed;
-        document.getElementById('categoryFilter').onchange = renderPodcastsFeed;
-        document.getElementById('sortOrder').onchange = renderPodcastsFeed;
-
-        window.onload = initPodcastsHub;
-    </script>
+    window.onload = initPodcastsHub;
+</script>
 </body>
 </html>
