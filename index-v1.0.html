@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NotebookLM Podcasts</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 20px auto; padding: 0 20px; }
+        .card { border: 1px solid #ccc; padding: 15px; margin-bottom: 15px; border-radius: 8px; }
+        audio { width: 100%; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>NotebookLM Podcasts - Gemini Notebook</h1>
+    <div id="podcast-list">Loading...</div>
+
+    <script>
+        fetch('podcasts.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('podcast-list');
+                container.innerHTML = '';
+                data.forEach(podcast => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <h3>${podcast.title}</h3>
+                        <p>${podcast.description}</p>
+                        <audio controls src="${podcast.file}"></audio>
+                    `;
+                    container.appendChild(card);
+                });
+            })
+            .catch(error => {
+                document.getElementById('podcast-list').innerText = 'Failed to load podcasts.';
+            });
+    </script>
+</body>
+</html>
