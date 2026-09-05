@@ -1,0 +1,366 @@
+
+Anybody else?
+
+Hello!
+
+Okay, so there is a difference between F times. G of X. This is f of x multiplied by G of X. It is if you see a small circle, not a DOT but a circle. I hope you remember this is f of G of X. This is composition of functions that is a product of two functions, so there is a difference between the two.
+
+So, if you have f of x equals to say X Plus 1 and G of X is just x square, then F times G of X would be f of x times G of X, which is X plus 1 times x squared, which is X cubed plus x squared.
+
+Whereas F of G of X can also be written as.
+
+And the way you treat. This is like this. If f of x is X Plus 1? And if you want F of G of X, think of it like this. This G of X is going to push this x out, and then it is going and occupying that position.
+
+That is what F of G of X would be like, you know, wherever there was X, it pushes it out. So, on the right hand side, you have X, but the G of X itself is x squared, so this would be where you have X the x squared pushes this out, and you have x squared plus 1.
+
+Notice. These two are not the same. They are different. They are not the same. So, the product of two functions is different from the composition of functions, which is a function of a function. Now, to understand this, let me give you a classic example. We all go to, uh, before or for Black Friday, right?
+
+We go. Stand in line, and the most popular thing that people want to buy in a Black Friday is TVs. Because Super Bowl is coming down the lane. And yes, of course, we need to have big screen because football wouldn't be football if it was a small screen. Yeah, so?
+
+You go to the store, and then they say, oh, 50 off. Because it's a Black Friday sale fine, so you get a discount. Okay, so if this is the price, then 50 off, that's the first discount that you're getting. If it was five hundred dollars, I don't know if we if there is even a 500 TV 50 off now is 250 dollars.
+
+Now, when you go to the cashiers right register, you're saying, hold on a minute. I have this paper coupon. I know, those days are gone, but assume that there is a paper coupon, which says additional 20 off, and that is your f of x. So you already got a discount?
+
+Which was 50 off, so it was 250 now. The additional 20 percent, so 20 percent of the 50 that you got so function of a function. So, 20 percent of 250 dollars would be what basic Elementary Max. What is 20 of 250 dollars?
+
+Oh, what a diagonal web. Yes, it's 400. 20. Wait 20 of 250 is how much 50, so you subtract 250 minus 50, you get to us. So now, the TV cost is 200 dollars. So this is what we mean by a function of a function 20 on top of the 50 that you apply for the original cost of five hundred dollars, so there is a difference between a composition, a function and product of functions, and the way it will look is sometimes it's a DOT.
+
+Sometimes it will be like a star, but Function of a function. It will have a little open circle. Okay, so please remember that, uh, when you went through one point one through 1.4. I'm assuming that you were all spending the whole day yesterday, going through the pre-cast stop. Did you come across any specific topic that you said, oh my gosh, I don't remember this.
+
+Do you have any specifics such a topic that you want me to quickly go over, please? Yes, factorization. Factorization. Let's say you have f of x equals to? As you can see it, right? Yeah, f of x equals to. Let's let me pick a problem up. Can I pick a problem out of the blue so x squared minus?
+
+Give me a minute, okay?
+
+Okay, this is my function, my function. I want to find out what are the intercepts? Or, let's say to be more, press X intercepts. This is a parabola. Okay, so which means, and this is positive, right? This leading term is positive, so this is going to be a parabola going upwards, like a touchdown symbol.
+
+And it says, what are the x-intercepts? Rumble. Towards the end, I was talking about your discriminant, so if it is of the form a x squared plus B X plus C okay, the x interseum. You want to less set y equals to zero or f of x equals to zero solve for x.
+
+This is what you must have done in in algebra. Okay, to get the x intercept, so I want to take this and set it equal to zero, and I want to solve for x now. X squared minus x minus 20. How can I mean, I agree, everybody can find out what the x-intercepts are by using X1 equals to minus B, minus square root of B squared minus 4AC, divided by 2A and X2, would be negative B plus square.
+
+I, I agree, but for simple problems, you don't have to go through this every time. Is there any way I can? Factor this out and get the answer. So, to factor you want to write it like this. I need to find two numbers. Find two numbers. Which, when multiplied.
+
+Gives you a negative 20 and the same two numbers. It can be positive or negative. It doesn't both have to be positive. Doesn't both have to be negative? No, no one could be positive. One could be negative. Okay, the same two numbers when added gives you the coefficient of the middle term.
+
+In this case, it is negative one, so I'll write here. The or I should just say it should give you B. Okay, so it should give you B, or in other words, for this specific example, the coefficient of the middle term, it is -1, just in for this particular problem and negative 20 would be a *, C.
+
+The coefficient of x squared term and the constant when you multiply them. It should be -20, so let's say I want to have some. Um, I want to use a different alphabet, okay, s and t. What should it be so? S times T should give me negative 20 and S Plus T should give me negative one.
+
+Do we know how to solve this system of equation? Can we solve this simultaneously, or if you can guess, that would be awesome, too, right. What are the factors of negative 20. This is how you were taught back in intermediate algebra, right? So the factors for negative 20 there can be four or even more than more than one.
+
+Okay, it can be negative 20 times 1. Or it could be 20 times negative 1. Okay, so this could be here, as this could be your T. This could be here, as this could be your T, or it can be negative 10 times 2. Or it can be 10 times negative 2.
+
+Or it can also be five times negative four, or it can be negative five times four. These are the various options that you have to get negative 20. This is as though I'm doing it for the first time, but you all know how to do factoring, so you're not going to go through this tedious process each time you know how to get factors okay, assuming because this was done in intermediate algebra.
+
+I'm just doing it from scratch. Okay, now when you add -20 and 1, you get -19. Wait a minute that is not negative one, so this is out that is out. This combination when you add, you get negative eight. No, that even doesn't work. This gives you positive. Oh, that's out now!
+
+5 plus, negative 4 gives you positive one. Oh, I don't want positive, and I want negative one. So this is also this is the correct. Combination, so you will write here x minus 5 times X plus 4 equals to 0 by the zero property either x minus 5 equals to 0 or X, plus 4 equals to 0, and that tells you x equals to 5 or x equals to negative 4, so these two are your x-intercepts or your Solutions to the given quadratic equation.
+
+Do you all understand this was just a quick review of? Factoring of a quadratic Expressions. Okay, and if you it's too much, you can always use this plug in what is B plug in. What is a plug in what is C simplify? You will get X1 and you can bet you will get five.
+
+As one answer you will get negative 4 as the other answer. You can try it at home and satisfy yourself. Okay, it will come out okay, because the factoring is perfect, so it will turn out to be that. This works for every quadratic expression, everything, but if something is factorable, it's actually kind of nice.
+
+If you can Factor, then you would, oh, I got it, done? You know, I mean, this is a long process. It's not going to take you this long, well, assuming that you know how to fight it. This shouldn't take much time at all. Okay, all right, what is another topic?
+
+Anything else that you? Yes, give me, uh, he shows how the logarithmic function and then another with a natural love. You want me to do a problem. Okay, you want me to solve an equation? Oh, graphing? Okay, uh, this is page one later on. If you guys want to take a picture, you can take a picture so.
+
+Okay, two. Let's say I want to graph natural log of when you say natural log. It is to the base e okay if it was to the base 10. I would have just used log. That's why I mean log simply means it is to the base 10. Okay, so let's say I want to do natural law.
+
+I it's a pain to keep writing base. E base c so it's kind of understood if you mention Ln it is base e. If it was any other base, then they would have written log to the base, too. They would have specifically said, what is the base? Okay, so let's say you want Ln of, I know, I I just I?
+
+I want to put a different function here. Let's say it is Ln.
+
+Plus. Minus 1, let us say, this is our function. Okay. And I want to draw the graph of this. You start off with your? Parent function, which is a simple natural log of x that is the simplest log function, so that graph is generally going to look like this.
+
+This is your y that is your X, and this is your natural log of x. And of course, this x-intercept is going to be 1 0, and you know, it never crosses ER y-axis log functions never cross y-axis. Okay? I want x + 1. When you see. So the next graph, I'm going to get, is natural log of x plus 1.
+
+If you have a different colored pencil fantastic, please use different color pencil. Then, you can distinguish okay from this. Where did it go see if I have one. I have a green ink. I don't know if it works, but we can try. Okay, so when you see a plus one, what kind of a shift is it?
+
+Well, you can see it's green color. Can you? No, is I looking the same color okay, but when you take a picture, maybe it will work X, plus one is shift in what direction? Yes, horizontal to the left horizontal shift to the left by one unit, so this is horizontal.
+
+Shift. To the left, because when you see a plus, it's left left by one unit, so that will be the next graph. So, here, you're going to have a vertical asymptote. We just shifted from 0 to negative one, and so the graph is now going to shift. From here, sorry.
+
+And then it's going to be like this, so you're intersecting point. Your x-intercept is going to be at 0, 0, I know it. It's not drawn to scale because I'm doing freehanded drawing. Okay, so it is shifted to the left by one unit. So, one zero move to the left as zero zero.
+
+That becomes your x-intercept, and this y-axis has moved to this. So, this is x equals to negative one line, and this becomes your vertical asymptote. Okay, that is the first transformation first trans formation. We have one more, right? There's a negative one here, so the second transformation? In this case, it is the final transformation that you need to do is natural log of x plus 1 minus 1, so let's see if I can, I know.
+
+And you can. When you take a picture, it'll be different color. Okay, so when you see this negative one, it means the entire graph, like your Time Square ball. You know how it starts coming down for New Year's Eve? It went down by one floor. Because it's negative one.
+
+It dropped down, so this point will drop down to zero negative one. No, it's like gone down, so the graph will now be like this.
+
+Kind of like that. Okay, and that is your final graph. It's all like, I don't have this. Long X, Y, no coordinates, no calculator, no punching in any numbers, nothing you are using transformations. And you're using the parent graph and using that your transform, transforming one stage at a time and the first it went from this purple to the green and then from the green.
+
+It went down to the black, and that is how you've got your final graph. Did that answer your question? Yes, okay, thank you. Anything else? Yes, uh, trigonomic, uh? Yes, equations. What about that? How to solve them? Yeah, yeah, okay.
+
+Please permit me to take a problem from the textbook. Okay.
+
+1.4 here we go!
+
+Before we jump in. Can I? Jog all your memory. Why by showing you? All these trig functions that you are expected to know from precap. If you want, you can take a screen a picture of this so you can keep referring to that. Sine cosine tangent cosecant secant cosecant are defined like opposite over hypotenuse adjacent over hypotenuse opposite over adjacent and cosecant is the flip of sine secant is the flip of cosine and cotangent.
+
+Is the upside down like reverse of tangent? That's why it's adjacent over opposite. Sine Theta is defined as the opposite side over. The hypotenuse, right? So, if you look at this triangle, the opposite side is here. Oh, sorry, you can see, let me move that the opposite side is here.
+
+The angle is here. Hypotenuse is your adjacent is here. If this is any point, sorry, I'm going to just write here. Who cares? It's my book, so this would be why, and this would be X, so that's how they wrote sine Theta as y over R. Because can you imagine writing opposite over hypotenuse, like all these big long words, no, so, y, over R mathematicians are basically very lazy people.
+
+We want to abbreviate everything under the Earth. We want to use as few letters as possible to indicate so. Sine Theta is y over R. Cosine Theta is X over r, everybody knows tangent. It's opposite over adjacent or rise over. Run the famous famous. Everybody knows that ratio, so its rise over run and cosec can secant, and cotangent is a flip of each.
+
+One of these, you know, upside down now. From this, you also have. The famous famous Pythagorean identity cosine squared plus sine squared equals to 1. It is probably drilled into your mind by now. It should have been. That is. It should you. You should be having that in your mind.
+
+One plus tangent squared, is this one? Plus, now, you're wondering, like, how am I supposed to remember all these things? So, here is a small trick that I will show you. If you think of a circle. And if you think of any point on the circle as X, Y, and if this is your radius, we all know the equation of a circle is x squared plus r squared, especially if the center is 0 0.
+
+Are we familiar with that all of you? Yes, do you all remember that the equation of a circle is x squared plus y squared equals to R square? Who doesn't remember? Some of you are looking at me very strangely. I can read your Expressions, I'm worried.
+
+Can you please spend this weekend going over some of the old stuff please? Pretty please, you need to do that. Okay. You definitely need to know all these things, but this can also be written. As you know, the Pythagorean theorem, this is X, and this is why, and they say, like base squared plus height squared degree, you know, it's the same thing, right?
+
+So? And we just Define. And let's say your r squared r like the instead of radius R if it was 1, then you had the unit circle, and then you remember how you got all those points on the unit circle where x squared plus y squared equals to 1, so based on that, what was the definition of sine Theta?
+
+It was y over R, so if R is 1, wouldn't sine Theta be just y? If R equals to 1 in a unit circle, correct R is one unit circle radius 1. Cosine Theta would be adjacent side over R, which would simply be x a again when R is 1.
+
+So, any point on your unit circle? X, y can be written as cosine Theta comma sine Theta. And the angle keeps changing first. It is zero degrees, then you have 30 degrees, and then you have 45 degrees, and then you have 60 degrees, and then you have 90 degrees.
+
+Which is your right angle, right? You remember those things, and this is your first quadrant. This is your second quadrant. This is your third quadrant. This is your fourth quadrant. Remember this? Okay, let me, I think I'm going full-fledged into a trick right now, because I, I'm looking at people's faces, and that doesn't assure me, so we are doing it.
+
+Okay, it will be very useful because trig is extremely important for calculus. One, two, three for everything, so? The way you remember? In which quadrant? Trig function is going to be positive in the first quadrant. All trig functions. Positive. All drink functions are positive. In this SEC. Okay, so which means X is positive.
+
+Y is positive. That, and remember, radius. It's like my height. The radius of a circle can never be negative it. It's a measurement, right? It can never be negative, you know? So, it's like, my height can never be negative. Nobody can say, oh, she is negative. Five feet tall.
+
+What the heck? No, I'm just five feet tall means like, it's always positive, like somebody's height, right? So the radius trig functions are positive. Radius is a positive quantity. That means. Your cosine. Your tangent will just keep sticking with sine cosine tangent because the other three are flip of these, so we don't have to worry.
+
+I mean, it's just, you know, like, upside down numbers? Okay, this was y over R. So, this is X over R, and this is y over. Okay, so in the first quadrant, X and Y are positive. Everybody knows like x square positive Y is positive in the first quadrant that's known fact, so sine cosine tangent are all positive, so they're flip also is going to be positive, so all trig functions are positive.
+
+Please concentrate on the all, which is a. When you go to the second quadrant, your x is negative, but your Y is still positive. So, that means. In the second quadrant notice, the Y is still positive, so the sign is positive short form. Plus, with a v e, your cosine is negative because X is negative and cosine is associated with the x value, which is the adjacent value, which means if x is negative, then here cosine will be negative.
+
+Tangent is y over X, so Y is positive. X is negative. Tangent will be negative. That is the first quadrant. So, what is positive sign, which means it is s so all? Students. Third, one would be picked. Calculus. And so here. X is negative y is negative, so sine is negative.
+
+Cosine is negative but negative, divided by a negative quantity. Tangent is positive, so that's why, because tangent is positive, we have T. And that's why we wrote there take. All students take. Calculus here. Your X is positive. Your Y is negative. So, which means your sign is. X is positive.
+
+Cosine is positive, sine is negative, and because sine is negative, tangent is negative. Notice cosine is positive, so C, so you have calculus. The first letters are a s, t a, and it is easy to remember the slogan. All students take calculus, and that tells you which trig function is going to be positive where?
+
+Any questions on this? Did you learn this in precap all of you? Do you remember it's all coming back? You know, even if you forgot, okay, here is the identity. Now, we know that the equation of a circle is y squared x squared plus y squared equals 2, we can keep it as R square R1 because we're talking of unit circle.
+
+We know that X is cosine squared. Right, because X is cosine Theta R is one. Remember, Y is sine Theta R is one, so we don't need to write. So, x² + y square is 1, that is your first identity. Aha, that's how we got the first identity. Now, if you divide throughout by sine square.
+
+Both the sides. Whatever you do to one side, you need to do it to the other side. Also, cosine divided by sine is cotangent squared sine squared, divided by sine squared, is 1 1 over sine squared is cosecant squared? Isn't this your third identity?
+
+If you take the same function. The same identity now. Divide by cosine squared through o. You get one. Plus, sine over cosine is tangents of tangent squared equals to secant. Squared, that is your second identity. And while we've got all the three identities. Now, we don't need to memorize.
+
+Try not to memorize, please. Reason it out, and you will never forget it. That's how you need to learn math, not by Road memorization. That's why we forget things. If we learn something through reasoning. We will never forget it. So this is about unit circle and your basic identities from these three basic identities is how you get.
+
+Where is the cheetah paper with all of those identities. By the way, you can take pictures of all of this, so don't worry. You should not even be writing. You should be listening and learning. You can always take pictures and write this later. Okay, this is page number three, and uh, let me now show you your all these identities.
+
+See, they're talking about that here. Then, they're talking about the three Pythagorean identities, and from this, you can get you can re-write them, and you can get the double angle formula. You can get the power, reducing all of these. You can get based on just the sine squared plus cosine Square theta equals to 1.
+
+I want to show you one more thing. Okay, I don't know if your features before, too. I thought you this or not, but let me teach you this because it's important I have five more minutes. I want to make sure, and you, what did you want somebody? What did you want me to do?
+
+Um, it was treating them, which basically, people don't know hummus. Okay, you wanted me to do an equation, right? Yeah, like, how to solve them okay? If we take one simple thing and then show you. And then, okay, let's say you want to solve sine Theta equals to negative square root of 3, divided by 2.
+
+If you know your table, which by the way, when go went like this, right? You had sine Theta and you had zero degrees 30 degrees, 45 degrees, 60 degrees, 90 degrees. Am I right? Isn't that what you had so sine? 0 is 0 sine, 30 is one half square root of 3, divided by two, oh no, no, no, no square root of 2, divided by 2 square root of 3, divided by 2 and 1.
+
+These are the table values for sine, and you're wondering, how am I supposed to remember this. Let me show you the way I was taught back when I was in ninth grade. This is how my teacher taught me back home. She said, you can write all of this as square root of 1 divided.
+
+Notice how it is increasing. And notice the common square root of 4 for every term, and look what how it is in the top 0 is 0 agree 0 / anything is 0, as long as it's not 0 / 0 that is undefined 1 is 1. For all of these, the square root of 4 is 2, so you have one half that is square root of 2, divided by 2 square root of 3, divided by 2 square root of 4, divided by square root of 4 is 1, and look if you can't remember this, do you think you can remember that easily and you have your?
+
+Very first set of number for yeah. So now that it is square root of 3 divided by 2, don't worry about the negative sign for the time being. Your sine curve looks like this.
+
+3/2 is 60°. So, which means if this is zero pi over 2 is? This is minus one. Right? When it is 60, it will be here, and that is square root of 3, divided by 2. This would be square root of 2, divided by 2. This would be one half, and that would be zero.
+
+So, notice it's like, saying, y, equals to sine Theta y equals to square root of 3, divided by 2, so 3, divided by 2 line, is this line. And where does it intersect? In this point, it intersects here. It intersects here, here, and here, and it keeps intersecting in all these points when it is positive.
+
+But what is given is negative, so which means you will go down and then this is what you are interested in. So, this line, if you see, here is where this negative square root of 3 is here. So, what are all these angles? If this is pi over 2, this is pi.
+
+This is 3 pi over 2, and then you have 2 pi, so if this is 60, this should be 90 plus 30. This would be 120 degrees. This is 60 degrees, and then on this side, this is 180 plus 60, which gives you 240, and this would be actually 270 and then.
+
+When you add another 30 to this, it becomes 300. So these are the points where you will have the answer if it is just one cycle, then you'll have this and this so your Theta would be 240 degrees or 200 or 300 degrees. And now, those are the two answers.
+
+Okay, it's a lot to digest, but? The point is, this is why I was telling you all to live in the math Center yesterday. Grab a pre-cal go through this. You did you think that I was kidding day before yesterday? I was very, whenever I say something. Please read this.
+
+I am not joking around. I'm very serious. You need to read. Because. This is why I publish on Sunday morning. In fact, I published it on Friday. My canvas Pages were published on Friday. I didn't even wait till Sunday. It was done. You all had access to it. Yes, it's past 3, 30.
+
+Okay, thank you. So, here's the deal I can make for all of you because we are still not completely. Sure, I will let you use your notes. Getting to a group of four, and I will just give you three simple problems, but you cannot cannot use your phone. You cannot use your computer.
+
+I'm sorry, no charge. GPT is allowed, so please put those away poor people's brain power your notes. And that is good. Okay, I'll give you just three simple problems 15 minutes for each problem. I need one sheet back from each group. I don't want 40 papers coming back. Four people in a group one sheet of paper.
+
+Please listen with all the four names you need to designate, who is going to do the final copy of the quiz. It better be a neat job with all the steps. Yes, yes. You need to form points. I don't make groups. You will find someone who's only three people go.
+
+Join them. You can rearrange, join. Do whatever. Four people for blue race.
+
+Yes, get up and move. Don't be lazy. You're all young people.
+
+You know how they just ditched you? You want to join anyone? Go join anybody as the fifth person you have absolute freedom. She got lucky! Yay! Because he just joined, I don't know just this morning. Okay. I shall give you three problems. I am going to write the problem on the goal because I need to take attendance.
+
+So, let's just display off.
+
+Because the letters are so small.
+
+Who is Omar? Who is all stop talking? Who's Omar? Hmm, okay.
+
+Let's see if I have the quiz in my atmosphere silence.
+
+No.
+
+It's like a restaurant.
+
+It's just plug.
+
+Okay, you can start with the first problem, and then I'll line the second one.
+
+Yeah.
+
+Negative.
+
+Anal. Okay, these are the problems, um.
+
+Oh yeah, yeah. Just wait, wait.
+
+So, drop, um. You know what it says after R give it? If R inverse, I think it's inverse or even. Oh, inverse function. Oh yeah.
+
+So, it's like this.
+
+So, put me for the second one, um.
+
+Foreign.
+
+Yeah.
+
+I'm taking attendance. Do you know how?
+
+Sean, where?
+
+That's you. Yeah. I'm learning your names give me two minutes, two weeks. I will learn your names Jackson here.
+
+Junior. Sahara. Franco. I know you told me a different name, Shinra. What was the name you told me yesterday? Yeah, here for now is correct. Okay, Cordella hashita. That he was going to come to class today. Where, where? Question for number one, let.
+
+Oh so whichever equation it is. You already finished? How do you start it, or like, how did you start the problem? I was starting the first one like this, and I grab food. For each of these, I I grabbed one, and then we just the answers are for a is negative.
+
+Two, it's the value is zero. This one is here. This one's there. Also, it's just 20 yes. So, this one is positive one because it now uses the second equation, so it'll be here. That's holographic. Oh, okay.
+
+The second problem show. The f and g are inverses are inverse functions of each other. Is it hang Zoo? Did I say it today? Is it high or Tang Zoo Zoo zoo zoo? Call anyone's name please! Did I call everybody's name? Did I miss anyone? So, okay, so Israel is getting dropped today, and I will write secretary excuse me.
+
+Thank you very much.
+
+I mean, I'm sure. Um, it's the starting event or the starting number. So, yeah, C for number one, right, that for one, correct? What you do with it. What is taking place of X? If you plug it, you either so much of verifiers and whatever verifiers correct. You then tell you the equations that it correspondence to that verify, and then you can execute your Wi-Fi access.
+
+So, if you need to know this to write it down.
+
+Is to use dark ink for goodness sake. Can you get rid of your number two pencils? They are useless. Use dark pencils once, then I will give you a pet please. I can't see at night time when it is very light in my body.
+
+Now, how you connect the dogs I am? I just know the dots are there number two? Are we solving them? Are we just graphing them. Oh, there's one the first ones or no for number two. I mean, you solved this equation for each of these values, and then you grab them.
+
+Oh yeah, that's her number one. Yeah, but for number two, oh, you mean for number two, yeah?
+
+Yeah, so how do you get like this means this literally means the square root of x and, well, Justin square root of x plus the square root of three, so this can be seen that. How do we get this quality, or we can do it like differences players, so it will be like X Plus x minus three.
+
+Or, we could do this, like, oh, it might be conjugate correctly, but then it will be here minus this over this. No, we we were getting closer to a negative here. That's why, and I'll try okay.
+
+Well, I don't know about the coordinates, I just know, but it means you don't need this place. Um, yes.
+
+Yeah, um. In your work, right? Yeah, make sure that they, my name is everybody's full proper name is written because you don't use any pet names. I can't find it in the roster. Please, no abbreviated alternate names. I need the name as it is in the register. Okay, I have a question.
+
+Yes, um, are we allowed to use this calculator? Okay, yeah, yeah.
+
+Yeah, right now.
+
+Studio.
+
+There.
+
+Can you follow my handwriting everybody? Yes. I'm sure. G are inverse functions both analytically and graphically, so we need to graph this and this and then show that it. Yeah, it's reflecting about y equals Direction and analytically. You can show when two functions are inverses of each other, yeah.
+
+No, no, you draw the two functions, and it will show that they their inverses. Then, you will be able to see it, yeah.
+
+Yeah, I agree.
+
+Did you expect?
+
+I, I just figured out something, you know, what a squaring function looks like this, you know, it's a y and x-axis. It starts at zero, and it goes like this, right? And then, the, when you do some transformations, you're here, you're shifting it by negative three. So, it will start here, right?
+
+Is one and two, and then this side will be negative one. Yes, okay, yeah, I was just trying to graphic, like, yeah. That's.
+
+Spring.
+
+Yeah.
+
+Should we just draw?
+
+You can calculate it.
+
+Is one one.
+
+I just figure out the second one you did. I think I did because there's a shortcut is what she just told us. You don't need to grab every single point. Uh, I'm doing here, because here is a little bit messy. So, let me see. We know a graph. Last week, she told us a graph of a squaring function has to look something like a u right and a graph of a square root function looks something like that.
+
+An asymptote to this, like horizontal asymptote over here, yeah. So, this is zero. This is zero, so I'm gonna graph it here for the squaring function. We are having x squared minus three, so that means we have a shift downwards minus three, so it's one, two, three. And we're gonna look something like that.
+
+And then the other one. This is the square root function, and it's shifted. Like, inside the square root, three units to the left. So instead of here's a negative x-axis, so one, two, three, it's going to look something like that. Wait. So, even though it's like X plus three, it's gonna go back.
+
+Yes, yes, it's because three plus three means, plus three units to the left. Oh, okay, yeah. And then, let's say, if it were like, minus three, it will be to the other side, right? Yeah, oh, okay, so it's the opposite is the opposite, yeah, opposite of that. So, I think these are related like this.
+
+One could be like. Uh, if we rotate it, I have like 90 degrees. It would look like this, except this one, uh, the range. And yeah, the range is is just zero. Oh yeah, I get what you mean? Yeah, yeah. This domain will be like from negative three to positive to Infinity, so I think that's how they relate.
+
+Yes, what do you think I'm just trying to Vlog it and photographics, but I try to film before? So, yeah, um.
+
+When x is equal to negative equal to negative three, this whole thing will be zero because this cancel out will be zero. And then one I follow, how do I make it nine? I just pass it at six, plus three equals nine, so it's something like that is giving negative.
+
+No, that's plus three, yeah, and that's better.
+
+So you can confirm if that's the case.
+
+It tells you your device details. Yeah.
+
+How? Okay, I know. These are octopi legs, you know? I hate from this. How do I find out? You go all the way down or system. I believe in asking when you don't know somebody, just like how I tell my story because I do this. Yeah, thank you for your example.
+
+What do they mean by OS? Is your current laptop? It's a Max of hair, yes, operating system. Yeah, what do you? What do I think Chrome operating system? No, that's your browser.
+
+As long as?
+
+The second. The first game was that the second game was better. Maybe, I guess my, you just again, the the?
+
+Better when he was there man.
+
+Year.
+
+Going over today. This is all, uh, still. Like, pretty tough for this books.
+
+Oh, okay. So, this time, G, get some DX, yeah.
+
+Okay, okay. You, you first environment from this one. These values will plug them into this one right here, so the the g-box.
+
+Okay, um?
+
+Be happy!
+
+Stop making your first Hobbies because it's 4, 15. Okay, six, please.
+
+Yeah, she's doing it a second one. Yeah, are you in that third one? Oh, and I'm still on the same thing. Yeah, I think I also, I'm not sure. Did you want me to write all the answers or someone I don't know? Who has the best handwriting?
+
+It comes on. Okay, so for number one. Um, what did I get because I've got for a negative two accounts? Oh, favor for a Mia to zero. And he is.
+
+And she said to get the shower work, right? Can you, uh, do me a favor and remove this crap from the left side? This needs to go all this. This is no good turn in the professional looking paper. Thank you, I know. I don't, I mean, these things, right?
+
+They get hot. Oh, take it off, please. By the way, the today's notes are here in case people want to take pictures. I'm leaving it here for you, okay?
+
+I'm doing the number one. Usually, I don't know about staying Beyond 420, but my car is in the shop. I need to go pick it up before five o'clock. I'm loving, um.
+
+And then, um. Yep, okay. Now, just do a table. Nice key, I mean, s, n, g, and then just put one. Yeah, and then take three, three, yep. So the other ones to to?
+
+Anybody needs to take pictures of today's notes by any chance anyone I can put it away. If not, I'll take the pictures.
+
+I'm leaving.
+
+Yeah, yeah, only the first part.
+
+Okay, I did something the third one I'm doing some algebraic manipulation, like a lot of X. And I'm trying to like, isolate, okay. If you're working on this one. Okay, welcome to B. Okay, I got three, two, three, yes, um? Okay, okay.
+
+Not yet, not yet, sorry. Maybe maybe? I didn't get to.
+
+Do you get? Oh yeah, because I, I just got a delusion, but I'm sure that's not the answer. Please do not forget anything in the classroom. It is not going to be just want to staple. It is a better idea what just staple it all together, rather than having one come on, come on.
+
+Yeah, first, who hasn't turned it in yet? I'm sorry, oh my gosh, all right. Okay, so time, time, time, try it. Yeah, no, no, no. Here's a stapler. You can staple it. Okay, that's okay. Yes, that sounds better. Did you write your names that's more important than anything else you guys, his first name?
+
+Okay, okay, sorry. Why everyone have a wonderful weekend? But you can try to write what you got a line of things. Oh yeah, yeah, we just wanted yours.
+
+Uh, yes, I just put all together. Or you should probably label it as like the work for three. Yeah, the person said, I will wait, don't worry, don't. Let's make sure that they don't cheat. No, because he came to school here. Oh, really, yeah. And he is now taking care of my car.
+
+So, can you be like, I know, huh, that's so nice. Okay, bye. Have a nice day.
+
+Yes. You can help this with the third one. I mean, okay, let's have the three manipulation. I'm not good at all the brain manipulation. I'm good at trigonometry. I'm the best at trigonometry, but I'm not. Good at the other one at all.
+
+Especially.
